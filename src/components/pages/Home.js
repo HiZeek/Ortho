@@ -1,29 +1,19 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 
 // Components
 import Header from '../Layout/Header';
 import NameOfService from '../Layout/NameOfService';
 import PastIncidents from '../Layout/PastIncidents';
 import SubHeading from '../Layout/SubHeading';
-import PaymentPage from "./PaymentPage";
+import SystemMatrics from '../Layout/SystemMatrics';
 
-const Home = () => {
-  const [confirmPayment, setConfirmPayment] = useState(false);
-
-  const paymentHandler = () => {
-    setConfirmPayment(true);
-  };
-
-  const closePaymentHandler = () => {
-    setConfirmPayment(false);
-  };
-
+const Home = (props) => {
   return (
     <Fragment>
-      {confirmPayment && <PaymentPage onClose={closePaymentHandler} />}
-      <Header onConfirm={paymentHandler} />
+      <Header onConfirm={props.onConfirm} />
       <SubHeading pageTitle="All systems are operational" />
       <NameOfService />
+      <SystemMatrics />
       <PastIncidents />
     </Fragment>
   )
