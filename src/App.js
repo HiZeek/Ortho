@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Component
 import Home from "./components/pages/Home";
+import PastIncidentsModalPage from "./components/pages/PastIncidentsModalPage";
 import PastIncidentsPage from "./components/pages/PastIncidentsPage";
 import PaymentPage from "./components/pages/PaymentPage";
 
 function App() {
   const [confirmPayment, setConfirmPayment] = useState(false);
+  const [viewPastIncidents, setViewPastIncidents] = useState(false);
 
   const paymentHandler = () => {
     setConfirmPayment(true);
@@ -17,19 +19,25 @@ function App() {
     setConfirmPayment(false);
   };
 
+  const pastIncidentsHandler = () => {
+    setViewPastIncidents(true);
+  };
+
+  const closePastIncidentsHandler = () => {
+    setViewPastIncidents(false);
+  };
+
   return (
     <Fragment>
       <Router>
         {confirmPayment && <PaymentPage onClose={closePaymentHandler} />}
+        {viewPastIncidents && <PastIncidentsModalPage onClose={closePastIncidentsHandler} />}
         <Routes>
+          <Route exact path="/" element={<Home onConfirm={paymentHandler} />} />
           <Route
-            exact
-            path="/"
-            element={
-              <Home onConfirm={paymentHandler}/>
-            }
+            path="/pastincidents"
+            element={<PastIncidentsPage onConfirm={paymentHandler} onView={pastIncidentsHandler} />}
           />
-          <Route path="/pastincidents" element={<PastIncidentsPage onConfirm={paymentHandler} />} />
         </Routes>
       </Router>
     </Fragment>

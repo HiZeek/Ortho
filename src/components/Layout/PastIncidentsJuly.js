@@ -14,7 +14,7 @@ const pastIncidentList = [
       "[Scheduled] [Zenith Bank] - Scheduled Maintenance - 16 August 2022 - NIGERIA",
     description: "The scheduled maintenance has been completed",
     date: "Aug 18, 00:00 -03:00 2022 UTC",
-    button: true,
+    button: false,
   },
   {
     id: "pil2",
@@ -22,7 +22,7 @@ const pastIncidentList = [
       "[Scheduled] [Zenith Bank] - Scheduled Maintenance - 16 August 2022 - NIGERIA",
     description: "The scheduled maintenance has been completed",
     date: "Aug 18, 00:00 -03:00 2022 UTC",
-    button: true,
+    button: false,
   },
   {
     id: "pil3",
@@ -50,7 +50,7 @@ const pastIncidentList = [
   },
 ];
 
-const PastIncidentsAug = (props) => {
+const PastIncidentsJuly = () => {
   const [dropdownIsActive, setDropdownIsActive] = useState(false);
 
   const incidentsNumber = pastIncidentList.length;
@@ -68,7 +68,7 @@ const PastIncidentsAug = (props) => {
       </div>
       {item.button ? (
         <div className="font-bold text-lg">
-          <Button onClick={props.onView} className="bg-black text-white px-6 py-5 rounded-lg">
+          <Button className="bg-black text-white px-6 py-5 rounded-lg">
             Suscribe To Github
           </Button>
         </div>
@@ -80,9 +80,9 @@ const PastIncidentsAug = (props) => {
 
   return (
     <Container>
-      <div className="pt-14 pb-7">
+      <div className="pt-7 pb-14">
         <div className="flex justify-between items-center border-b border-faint-black pb-4 mb-8">
-          <p className="font-medium text-2xl">August 2022</p>
+          <p className="font-medium text-2xl">July 2022</p>
           <img
             onClick={dropdownHandler}
             className={`"w-6 h-6 cursor-pointer " ${
@@ -97,13 +97,11 @@ const PastIncidentsAug = (props) => {
           onClick={dropdownHandler}
           className="bg-black text-center text-white w-full py-3.5 rounded-lg font-medium text-2xl"
         >
-          {dropdownIsActive
-            ? "-Collapse Incidents"
-            : `+show All ${incidentsNumber} Incidents`}
+          {dropdownIsActive ? '-Collapse Incidents' : `+show All ${incidentsNumber} Incidents`}
         </Button>
       </div>
     </Container>
   );
 };
 
-export default PastIncidentsAug;
+export default PastIncidentsJuly;

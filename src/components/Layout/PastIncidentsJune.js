@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Image
 import Arrow from "../../assets/Vector.png";
@@ -51,6 +51,14 @@ const pastIncidentList = [
 ];
 
 const PastIncidentsJune = () => {
+  const [dropdownIsActive, setDropdownIsActive] = useState(false);
+
+  const incidentsNumber = pastIncidentList.length;
+
+  const dropdownHandler = () => {
+    setDropdownIsActive(!dropdownIsActive);
+  };
+
   const pastIncidentListItems = pastIncidentList.map((item) => (
     <li className="flex justify-between py-8" key={item.id}>
       <div>
@@ -60,7 +68,9 @@ const PastIncidentsJune = () => {
       </div>
       {item.button ? (
         <div className="font-bold text-lg">
-          <Button className="bg-black text-white px-6 py-5 rounded-lg">Suscribe To Github</Button>
+          <Button className="bg-black text-white px-6 py-5 rounded-lg">
+            Suscribe To Github
+          </Button>
         </div>
       ) : (
         ""
@@ -70,13 +80,25 @@ const PastIncidentsJune = () => {
 
   return (
     <Container>
-      <div className="py-14">
-        <div className="flex justify-between items-center border-b border-faint-black pb-4">
+      <div className="py-7">
+        <div className="flex justify-between items-center border-b border-faint-black pb-4 mb-8">
           <p className="font-medium text-2xl">June 2022</p>
-          <img className="w-6 h-6 cursor-pointer" src={Arrow} alt="Arrow" />
+          <img
+            onClick={dropdownHandler}
+            className={`"w-6 h-6 cursor-pointer " ${
+              dropdownIsActive ? "" : "rotate-90"
+            }`}
+            src={Arrow}
+            alt="Arrow"
+          />
         </div>
-        <ul>{pastIncidentListItems}</ul>
-        <Button className='bg-black text-center text-white w-full py-3.5 rounded-lg font-medium text-2xl'>-Collapse Incidents</Button>
+        {dropdownIsActive && <ul>{pastIncidentListItems}</ul>}
+        <Button
+          onClick={dropdownHandler}
+          className="bg-black text-center text-white w-full py-3.5 rounded-lg font-medium text-2xl"
+        >
+          {dropdownIsActive ? '-Collapse Incidents' : `+show All ${incidentsNumber} Incidents`}
+        </Button>
       </div>
     </Container>
   );

@@ -6,6 +6,7 @@ import SubHeading from "../Layout/SubHeading";
 import Header from "../Layout/Header";
 import PastIncidentsAug from "../Layout/PastIncidentsAug";
 import PastIncidentsJune from "../Layout/PastIncidentsJune";
+import PastIncidentsJuly from "../Layout/PastIncidentsJuly";
 
 const PastIncidentsPage = (props) => {
   return (
@@ -13,8 +14,9 @@ const PastIncidentsPage = (props) => {
       <Header onConfirm={props.onConfirm} />
       <Container>
         <SubHeading pageTitle="Past Incidents" date='June 2022 - August 2022' leftIcon='<' rightIcon='>'  />
-        <PastIncidentsAug />
-        <PastIncidentsJune />
+        <PastIncidentsAug onView={props.onView} />
+        <PastIncidentsJune onView={props.onView} />
+        <PastIncidentsJuly onView={props.onView} />
       </Container>
     </Fragment>
   );
