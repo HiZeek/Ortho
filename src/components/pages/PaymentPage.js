@@ -11,6 +11,7 @@ import CloseBtn from "../../assets/x-circle.png";
 import PaymentListL1 from "../../assets/Group189.png";
 import PaymentListL2 from "../../assets/Group189-1.png";
 import Lock from "../../assets/lock.png";
+import LockDark from "../../assets/lockdark.png";
 
 const paymentList = [
   {
@@ -29,29 +30,29 @@ const PaymentPage = (props) => {
   const paymentListItems = paymentList.map((item) => (
     <li className="flex items-center gap-x-5 p-4" key={item.id}>
       <img className="w-8 h-11" src={item.icon} alt="secured payment" />
-      <p className="font-normal text-xl">{item.title}</p>
+      <p className="font-normal tablet:text-xl phone:text-base ">{item.title}</p>
     </li>
   ));
 
   return (
     <Modal onClose={props.onClose}>
       <div className="flex flex-col items-center">
-        <div className="bg-white rounded-xl w-[680px] h-[662px] p-14 text-center m-0 m-auto">
+        <div className="bg-white rounded-xl tablet:w-[680px] tablet:h-[662px] phone:m-auto p-14 text-center m-auto">
           <img
             onClick={props.onClose}
             className="w-14 h-14 absolute top-4 right-16 cursor-pointer"
             src={CloseBtn}
             alt="Close"
           />
-          <img className="w-32 h-11 m-auto mt-5 mb-11" src={Logo} alt="Ortho" />
-          <p className="font-normal text-3xl mb-9">
+          <img className="tablet:w-32 tablet:h-11 m-auto mt-5 mb-11 phone:w-24 phone:h-9" src={Logo} alt="Ortho" />
+          <p className="font-normal tablet:text-3xl mb-9 phone:text-xl">
             You are about to make a payment of{" "}
             <span className="font-medium">$20,000</span>
           </p>
-          <Card className="rounded-xl text-left w-[567px] h-auto bg-gray-rgba mb-9">
+          <Card className="rounded-xl text-left tablet:w-[567px] phone:w-[374px] phone:m-auto h-auto bg-gray-rgba">
             <ul>{paymentListItems}</ul>
           </Card>
-          <Button className="font-bold text-lg py-7 px-60 bg-yellow-ortho rounded-lg mb-9">
+          <Button className="font-bold tablet:text-lg tablet:py-7 tablet:px-60 phone:py-4 phone:px-36 bg-yellow-ortho rounded-lg my-9 phone:text-base">
             Continue
           </Button>
           <p className="font-normal text-base">
@@ -62,8 +63,9 @@ const PaymentPage = (props) => {
           </p>
         </div>
         <div className="flex items-center mt-12">
-          <img className="w-6 h-6 mr-5" src={Lock} alt="Secured" />
-          <p className="text-white">Secured by Ortho</p>
+          <img className="w-6 h-6 mr-5 phone:hidden tablet:block" src={Lock} alt="Secured" />
+          <img className="w-6 h-6 mr-5 tablet:hidden" src={LockDark} alt="Secured" />
+          <p className="tablet:text-white phone:text-black tablet:text-xl font-medium phone:text-base">Secured by Ortho</p>
         </div>
       </div>
     </Modal>

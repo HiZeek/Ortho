@@ -2,12 +2,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 const Backdrop = (props) => {
-  return (
-    <div
-      className="fixed w-full h-screen left-0 top-0 bg-black z-40"
-      onClick={props.onClose}
-    />
-  );
+  return <div className="fixed w-full z-40 h-screen bg-black" id="backdrop" onClick={props.onClose} />;
 };
 
 const ModalOverlay = (props) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Components
 import Button from "../UI/Button";
@@ -6,7 +7,6 @@ import Container from "../UI/Container";
 
 // Images
 import LogoWhite from "../../assets/logo-white.png";
-import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
