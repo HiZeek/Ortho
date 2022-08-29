@@ -12,12 +12,15 @@ const PastIncidentsPage = (props) => {
   return (
     <Fragment>
       <Header onConfirm={props.onConfirm} />
-      <Container>
-        <SubHeading pageTitle="Past Incidents" date='June 2022 - August 2022' leftIcon='<' rightIcon='>'  />
-        <PastIncidentsAug onView={props.onView} />
-        <PastIncidentsJune onView={props.onView} />
-        <PastIncidentsJuly onView={props.onView} />
-      </Container>
+      <SubHeading
+        pageTitle="Past Incidents"
+        date="June 2022 - August 2022"
+        leftIcon="<"
+        rightIcon=">"
+      />
+      <PastIncidentsAug onView={props.onView} />
+      <PastIncidentsJune onView={props.onView} />
+      <PastIncidentsJuly onView={props.onView} />
     </Fragment>
   );
 };

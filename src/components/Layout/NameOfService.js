@@ -55,7 +55,7 @@ const NameOfService = () => {
 
   return (
     <Container>
-      <Card className="border-solid border rounded-lg border-faint-black p-10 mt-14">
+      <Card className="border-solid border rounded-lg border-faint-black tablet:p-10 phone:p-4 mt-14">
         <ul>{serviceListItems}</ul>
       </Card>
     </Container>
