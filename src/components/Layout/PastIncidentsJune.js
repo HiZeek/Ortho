@@ -50,7 +50,7 @@ const pastIncidentList = [
   },
 ];
 
-const PastIncidentsJune = () => {
+const PastIncidentsJune = (props) => {
   const [dropdownIsActive, setDropdownIsActive] = useState(false);
 
   const incidentsNumber = pastIncidentList.length;
