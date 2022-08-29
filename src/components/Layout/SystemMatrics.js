@@ -92,7 +92,7 @@ const SystemMatrics = () => {
             <li className="tablet:pl-10 phone:pl-4 underline"><a href="#home">Monthly</a></li>
           </ul>
         </div>
-        <Card className="border-solid border rounded-lg border-faint-black p-10">
+        <Card className="border-solid border rounded-lg border-faint-black tablet:p-10 phone:p-4">
           <div className="flex justify-between items-center mb-8">
             <p className="font-semibold tablet:text-2xl phone:text-base">API Response Time</p>
             <p className="font-bold tablet:text-3xl phone:text-xl">
