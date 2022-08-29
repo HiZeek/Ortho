@@ -8,7 +8,7 @@ const SubHeading = (props) => {
     <Container>
       <div className="font-bold bg-yellow-ortho py-4 tablet:px-10 phone:px-3 rounded-lg mt-10 flex justify-between items-center">
         <p className="tablet:text-2xl phone:text-base">{props.pageTitle}</p>
-        <p className="tablet:text-lg phone:text text-light-black">
+        <p className="tablet:text-lg phone:text-sm text-light-black">
           <a className="tablet:mr-7 phone:mr-4 text-black" href="#home">{props.leftIcon}</a>
           {props.date}
           <a className="tablet:ml-7 phone:ml-4" href="#home">{props.rightIcon}</a>
