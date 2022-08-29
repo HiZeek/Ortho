@@ -68,7 +68,7 @@ const PastIncidentsJuly = () => {
       </div>
       {item.button ? (
         <div className="font-bold tablet:text-lg phone:text-base">
-          <Button className="bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center">
+          <Button onClick={props.onView} className="bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center">
             Suscribe To Github
           </Button>
         </div>
