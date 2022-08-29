@@ -10,9 +10,9 @@ const PastIncidents = () => {
     <Container>
       <div className="pb-14 pt-7">
         <div className="flex justify-between items-center">
-          <p className="font-bold text-3xl">Past Incidents</p>
+          <p className="font-bold tablet:text-3xl phone:text-base">Past Incidents</p>
           <Link
-            className="underline font-bold text-lg text-light-black hover:text-black"
+            className="underline font-bold tablet:text-lg phone:text-xs text-light-black hover:text-black"
             to="/pastincidents"
           >
             Incident Histoty

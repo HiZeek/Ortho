@@ -36,11 +36,11 @@ const PaymentPage = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      <div className="flex flex-col items-center">
-        <div className="bg-white rounded-xl tablet:w-[680px] tablet:h-[662px] phone:m-auto p-14 text-center m-auto">
+      <div className="flex flex-col items-center tablet:bg-transparent tablet:p-0 phone:bg-white phone:pb-14">
+        <div className="bg-white rounded-xl tablet:w-[680px] tablet:h-[662px] phone:w-full phone:h-[auto] phone:m-auto p-14 text-center m-auto overflow-auto">
           <img
             onClick={props.onClose}
-            className="w-14 h-14 absolute top-4 right-16 cursor-pointer"
+            className="tablet:w-14 tablet:h-14 phone:w-12 phone:h-12 absolute tablet:top-4 right-16 cursor-pointer"
             src={CloseBtn}
             alt="Close"
           />
@@ -62,7 +62,7 @@ const PaymentPage = (props) => {
             </a>
           </p>
         </div>
-        <div className="flex items-center mt-12">
+        <div className="flex items-center tablet:mt-12 phone:mt-5">
           <img className="w-6 h-6 mr-5 phone:hidden tablet:block" src={Lock} alt="Secured" />
           <img className="w-6 h-6 mr-5 tablet:hidden" src={LockDark} alt="Secured" />
           <p className="tablet:text-white phone:text-black tablet:text-xl font-medium phone:text-base">Secured by Ortho</p>

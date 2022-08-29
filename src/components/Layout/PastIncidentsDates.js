@@ -93,34 +93,34 @@ const PastIncidentsDates = () => {
 
   const dateListItems = dateList.map((item) => (
     <li key={item.id}>
-      <p className="mt-14 border-solid border-b pb-3 border-faint-black font-medium text-2xl">
+      <p className="mt-14 border-solid border-b pb-3 border-faint-black font-medium tablet:text-2xl phone:text-base">
         {item.date}
       </p>
       {item.description ? (
         <div className="text-justify">
-          <p className="font-medium text-2xl text-[#F24822] mt-2">
+          <p className="font-medium tablet:text-2xl phone:text-xs text-[#F24822] mt-2">
             {item.incident}
           </p>
-          <p className="mt-5 font-bold text-xl">
+          <p className="mt-5 font-bold tablet:text-xl phone:text-base">
             {item.resolved}-{" "}
-            <span className="font-normal text-xl">{item.resolvedMessage}</span>
+            <span className="font-normal">{item.resolvedMessage}</span>
           </p>
-          <p className="font-medium text-xl text-light-black">{item.date}</p>
-          <p className="mt-5 font-bold text-xl">
+          <p className="font-medium tablet:text-xl phone:text-base text-light-black">{item.date}</p>
+          <p className="mt-5 font-bold tablet:text-xl phone:text-base">
             {item.update}-{" "}
-            <span className="font-normal text-xl">{item.updateMessage}</span>
+            <span className="font-normal">{item.updateMessage}</span>
           </p>
-          <p className="font-medium text-xl text-light-black">{item.date}</p>
-          <p className="mt-5 font-bold text-xl">
+          <p className="font-medium tablet:text-xl phone:text-base text-light-black">{item.date}</p>
+          <p className="mt-5 font-bold tablet:text-xl phone:text-base">
             {item.investigating}-{" "}
-            <span className="font-normal text-xl">
+            <span className="font-normal">
               {item.investigatingMessage}
             </span>
           </p>
-          <p className="font-medium text-xl text-light-black">{item.date}</p>
+          <p className="font-medium tablet:text-xl phone:text-base text-light-black">{item.date}</p>
         </div>
       ) : (
-        <p className="text-light-black font-medium text-xl mt-2 mb-14">
+        <p className="text-light-black font-medium table:text-xl phone:text-xs mt-2 mb-14">
           No incident
         </p>
       )}

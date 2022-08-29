@@ -85,18 +85,18 @@ const SystemMatrics = () => {
     <Container>
       <div className="pt-14 pb-7">
         <div className="flex justify-between items-center mb-5">
-          <p className="font-bold text-3xl">System Matrics</p>
-          <ul className="flex items-center font-bold text-xl">
-            <li className="border-r text-light-black px-10"><a href="#home">Daily</a></li>
-            <li className="border-r text-light-black px-10"><a href="#home">Weekly</a></li>
-            <li className="pl-10 underline"><a href="#home">Monthly</a></li>
+          <p className="font-bold tablet:text-3xl phone:text-base">System Matrics</p>
+          <ul className="flex items-center font-bold tablet:text-xl phone:text-xs">
+            <li className="border-r text-light-black tablet:px-10 phone:px-4"><a href="#home">Daily</a></li>
+            <li className="border-r text-light-black tablet:px-10 phone:px-4"><a href="#home">Weekly</a></li>
+            <li className="tablet:pl-10 phone:pl-4 underline"><a href="#home">Monthly</a></li>
           </ul>
         </div>
         <Card className="border-solid border rounded-lg border-faint-black p-10">
           <div className="flex justify-between items-center mb-8">
-            <p className="font-semibold text-2xl">API Response Time</p>
-            <p className="font-bold text-3xl">
-              912<span className="font-bold text-xl">MS</span>
+            <p className="font-semibold tablet:text-2xl phone:text-base">API Response Time</p>
+            <p className="font-bold tablet:text-3xl phone:text-xl">
+              912<span className="font-bold tablet:text-xl phone:text-base">MS</span>
             </p>
           </div>
           <Line data={data} options={options}></Line>

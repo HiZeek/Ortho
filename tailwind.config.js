@@ -12,11 +12,11 @@ module.exports = {
         'light-black': 'rgba(0, 0, 0, 0.5)',
       },
       screens: {
-        'phone': '400px',
-        // => @media (min-width: 400px) { ... }
+        'phone': '250px',
+        // => @media (min-width: 250px) { ... }
 
         'tablet': '768px',
-        // => @media (min-width: 640px) { ... }
+        // => @media (min-width: 768px) { ... }
   
         'laptop': '1024px',
         // => @media (min-width: 1024px) { ... }

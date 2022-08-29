@@ -45,11 +45,11 @@ const serviceList = [
 const NameOfService = () => {
   const serviceListItems = serviceList.map((item) => (
     <li
-      className="border-solid border-b border-faint-black pb-4 mb-8 flex justify-between items-center last:mb-0"
+      className="border-solid border-b border-faint-black pb-4 mb-8 flex justify-between items-center tablet:text-xl phone:text-base last:mb-0"
       key={item.id}
     >
-      <p className="font-medium text-xl">{item.name}</p>
-      <p className="font-bold text-xl text-[#14AE5C]">{item.service}</p>
+      <p className="font-medium">{item.name}</p>
+      <p className="font-bold text-[#14AE5C]">{item.service}</p>
     </li>
   ));
 
