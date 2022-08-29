@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 // Component
-import Container from "../UI/Container";
 import SubHeading from "../Layout/SubHeading";
 import Header from "../Layout/Header";
 import PastIncidentsAug from "../Layout/PastIncidentsAug";
