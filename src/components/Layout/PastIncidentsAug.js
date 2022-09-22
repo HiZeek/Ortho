@@ -56,7 +56,7 @@ const PastIncidentsAug = (props) => {
   const incidentsNumber = pastIncidentList.length;
 
   const dropdownHandler = () => {
-    setDropdownIsActive(!dropdownIsActive);
+    setDropdownIsActive((prevDropdownIsActive) => !prevDropdownIsActive);
   };
 
   const pastIncidentListItems = pastIncidentList.map((item) => (

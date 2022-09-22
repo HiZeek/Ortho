@@ -7,7 +7,7 @@ const PastIncidentsModalPage = (props) => {
     <PastIncidentsModal onClose={props.onClose}>
       <div className="bg-white laptop:w-[953px] laptop:h-[724.91px] tablet:w-[768px] tablet:h-[700px] phone:w-[400px] phone:h-[422px] overflow-auto tablet:p-14 phone:p-5 tablet:rounded-2xl phone:rounded">
         <img
-            onClick={props.onClose}
+          onClick={props.onClose}
           className="tablet:w-14 tablet:h-14 phone:w-7 phone:h-7 absolute top-4 right-16 cursor-pointer"
           src={CloseBtn}
           alt="Close"
