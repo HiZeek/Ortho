@@ -70,7 +70,7 @@ const PastIncidentsJune = (props) => {
           <img
             onClick={dropdownHandler}
             className={`"tablet:w-6 tablet:h-6 phone:w-5 phone:h-5 cursor-pointer " ${
-              dropdownIsActive ? "" : "rotate-90"
+              dropdownIsActive ? "rotate-0 duration-500" : "rotate-90 duration-500"
             }`}
             src={Arrow}
             alt="Arrow"

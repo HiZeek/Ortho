@@ -7,7 +7,7 @@ const Backdrop = (props) => {
 
 const ModalOverlay = (props) => {
   return (
-    <div className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="fixed overflow-auto phone:h-screen z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div>{props.children}</div>
     </div>
   );

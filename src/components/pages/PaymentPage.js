@@ -36,7 +36,7 @@ const PaymentPage = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      <div className="flex flex-col items-center tablet:bg-transparent tablet:p-0 phone:bg-white phone:pb-14">
+      <div className="animate-fade-in flex flex-col items-center tablet:bg-transparent tablet:p-0 phone:bg-white phone:pb-14">
         <div className="bg-white rounded-xl tablet:w-[680px] tablet:h-[662px] phone:w-full phone:h-[auto] phone:m-auto p-14 text-center m-auto overflow-auto">
           <img
             onClick={props.onClose}
