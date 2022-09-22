@@ -19,7 +19,7 @@ function App() {
     setConfirmPayment(false);
   };
 
-  const pastIncidentsHandler = () => {
+  const pastIncidentsHandler = (id) => {
     setViewPastIncidents(true);
   };
 
@@ -36,8 +36,21 @@ function App() {
           <Route exact path="/" element={<Home onConfirm={paymentHandler} />} />
           <Route
             path="/pastincidents"
-            element={<PastIncidentsPage onConfirm={paymentHandler} onView={pastIncidentsHandler} />}
+            element={
+              <PastIncidentsPage
+                onConfirm={paymentHandler}
+                onView={pastIncidentsHandler}
+              />
+            }
           />
+          {/* {viewPastIncidents && (
+            <Route
+              path="/dataList/:id"
+              element={
+                <PastIncidentsModalPage onClose={closePastIncidentsHandler} />
+              }
+            />
+          )} */}
         </Routes>
       </Router>
     </Fragment>

@@ -1,95 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../UI/Container";
 
-const dateList = [
-  {
-    id: "dl1",
-    description: false,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-  {
-    id: "dl2",
-    description: false,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-  {
-    id: "dl3",
-    description: true,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-  {
-    id: "dl4",
-    description: false,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-  {
-    id: "dl5",
-    description: false,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-  {
-    id: "dl6",
-    description: true,
-    date: "Aug 18, 2022",
-    incident: "Delay in processing transfers",
-    resolved: "Resolved",
-    resolvedMessage: "this incident has been resolved",
-    update: "Update",
-    updateMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-    investigating: "Investigating",
-    investigatingMessage:
-      "this incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolvedthis incident has been resolved",
-  },
-];
-
 const PastIncidentsDates = () => {
-  // const [availableDescription, setAvailableDescription] = useState(false);
+  const [dateList, setDateList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/dataList')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      setDateList(data)
+    });
+  }, [])
+  
 
   const dateListItems = dateList.map((item) => (
     <li key={item.id}>
@@ -129,7 +53,7 @@ const PastIncidentsDates = () => {
 
   return (
     <Container>
-      <ul>{dateListItems}</ul>
+      {dateList && <ul>{dateListItems}</ul>}
     </Container>
   );
 };
