@@ -47,14 +47,14 @@ const PastIncidentsJune = (props) => {
       </div>
       {item.button ? (
         <div className="font-bold tablet:text-lg phone:text-base">
-          <Link to={`/dataList/${junDataList.id}`}>
+          {/* <Link to={`/dataList/${junDataList.id}`}> */}
             <Button
               onClick={props.onView}
               className="bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center"
             >
               Suscribe To Github
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
       ) : (
         ""
@@ -79,7 +79,7 @@ const PastIncidentsJune = (props) => {
         {dropdownIsActive && <ul>{pastIncidentListItems}</ul>}
         <Button
           onClick={dropdownHandler}
-          className="bg-black text-center text-white w-full py-3.5 rounded-lg font-medium tablet:text-2xl phone:text-base"
+          className="duration-300 bg-black text-center text-white w-full py-3.5 rounded-lg font-medium tablet:text-2xl phone:text-base"
         >
           {dropdownIsActive ? '-Collapse Incidents' : `+show All ${incidentsNumber} Incidents`}
         </Button>

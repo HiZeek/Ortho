@@ -57,7 +57,7 @@ const PastIncidentsModalPage = (props) => {
   ));
 
   return (
-    <PastIncidentsModal onClose={props.onClose}>
+    <PastIncidentsModal onClose={props.onClose} className='delay-300'>
       <div className="bg-white laptop:w-[953px] laptop:h-[724.91px] tablet:w-[768px] tablet:h-[700px] phone:w-[400px] phone:h-[422px] overflow-auto tablet:p-14 phone:p-5 tablet:rounded-2xl phone:rounded">
         <ul>{incidentPopupItem}</ul>
       </div>

@@ -47,14 +47,14 @@ const PastIncidentsJuly = (props) => {
       </div>
       {item.button ? (
         <div className="font-bold tablet:text-lg phone:text-base">
-          <Link to={`/dataList/${julDataList.id}`}>
+          {/* <Link to={`/dataList/${julDataList.id}`}> */}
             <Button
               onClick={props.onView}
               className="bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center"
             >
               Suscribe To Github
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
       ) : (
         ""
