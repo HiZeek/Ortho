@@ -50,7 +50,7 @@ const PastIncidentsJune = (props) => {
           {/* <Link to={`/dataList/${junDataList.id}`}> */}
             <Button
               onClick={props.onView}
-              className="bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center"
+              className="hover:animate-bounce bg-black text-white px-6 py-5 phone:py-4 rounded-lg phone:w-full phone:text-center"
             >
               Suscribe To Github
             </Button>
